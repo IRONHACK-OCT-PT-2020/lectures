@@ -25,9 +25,25 @@ class AddMovie extends Component {
         this.setState({ movies: copyMovies })
 
     }
+
+    deleteMovie = (movie, i) => {
+        console.log('delete movie??', movie, i)
+        let movies = [...this.state.movies]
+        movies.splice(i, 1)
+        this.setState({
+            movies
+        })
+    }
+
     showMovies = () => {
         return this.state.movies.map((eachMovie, i) => {
-            return <li key={i}>{eachMovie.title} {eachMovie.director}</li>
+            return (
+                <li key={i}>
+                    {eachMovie.title}
+                    {eachMovie.director}
+                    <button onClick={(e) => this.deleteMovie(eachMovie, i)}>Delete</button>
+                </li>
+            )
         })
     }
 
