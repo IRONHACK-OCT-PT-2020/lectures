@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+
+
 export function Cow({ name, age }) {
     return (
         <h4>
