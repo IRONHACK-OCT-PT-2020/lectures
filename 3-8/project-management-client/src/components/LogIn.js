@@ -1,47 +1,47 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class SignUp extends Component {
-  state = {
+class LogIn extends Component {
+state = {
     username: "",
     password: "",
-  };
+};
 
-  createNewUser = (e) => {
+createNewUser = (e) => {
     e.preventDefault();
     console.log(this);
 
-    axios.post("http://localhost:5000/api/signup", this.state)
+    axios.post("http://localhost:5000/api/login", this.state)
     .then(console.log)
     .catch(console.error);
-  };
+};
 
-  handleChange = (e) => {
+handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-  };
+};
 
-  render() {
+render() {
     return (
-      <div>
+    <div>
         <form onSubmit={this.createNewUser}>
-          <input
+        <input
             onChange={this.handleChange}
             name="username"
             type="text"
             placeholder="Username"
-          />
-          <br />
-          <input
+        />
+        <br />
+        <input
             onChange={this.handleChange}
             name="password"
             type="password"
             placeholder="Password"
-          />
-          <button>Sign Up</button>
+        />
+        <button>Log In</button>
         </form>
-      </div>
+    </div>
     );
-  }
+}
 }
 
-export default SignUp;
+export default LogIn;

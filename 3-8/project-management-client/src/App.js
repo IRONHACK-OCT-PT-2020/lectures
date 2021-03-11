@@ -4,6 +4,7 @@ import Home from './components/Home'
 import AddProject from './components/AddProject'
 import ProjectDetail from './components/ProjectDetail'
 import SignUp from './components/SignUp'
+import LogIn from './components/LogIn'
 import { Switch, Link, Route } from 'react-router-dom'
 import './App.css'
 class App extends Component {
@@ -15,6 +16,8 @@ class App extends Component {
           <Link to='/project-list'>Project List</Link>
           <Link to='/add-project'>Add Project</Link>
           <Link to='/signup'>Sign Up</Link>
+          <Link to='login'>Log In</Link>
+
         </nav>
         <div id="main">
           <Switch>
@@ -23,6 +26,7 @@ class App extends Component {
             <Route exact path='/add-project' render={(props) => <AddProject {...props} />} />
             <Route exact path='/detail/:projectId' render={(props) => <ProjectDetail {...props} />} />
             <Route exact path='/signup' render={(props) => <SignUp {...props} />} />
+            <Route exact path='/login' render={(props) => <LogIn {...props} />} />
           </Switch>
         </div>
 
